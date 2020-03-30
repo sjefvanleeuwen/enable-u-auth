@@ -16,7 +16,7 @@ Public facing website/api Windows of Linux (VM) met een Fully Qualified Domain N
 Installeer openssl via chocolatey: https://chocolatey.org/packages/openssl
 
 
-De referentieimplementatie gebruikt self signed certificates. Voer in powershell (of commandline) het volgende (unattended) commando uit:
+De referentieimplementatie gebruikt self signed certificates. Voer in powershell (of commandline) het volgende (unattended) commando uit (na het wijzigen van de FQDN's en IP nummers):
 
 ```
 openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes -keyout app.key -out app.crt -subj "/C=NL/ST=Zuid-Holland/L=Den Haag/O=wigo4it/OU=Org/CN=appname.azurewebsites.net" -addext "subjectAltName=DNS:appname1.azurewebsites.net,DNS:appname2.azurewebsites.net,IP:10.0.0.1"
